@@ -118,12 +118,14 @@ Before setting up the pipeline, ensure the following AWS resources and configura
 
 ## ✅ **Successful Execution**  
 ![execution_successfull](https://github.com/user-attachments/assets/46f29c94-bc06-40c2-b625-61000d32e46f)
+
 📌 Step Function executes all steps **sequentially**:  
 ✅ **S3 Upload → EventBridge Trigger → Glue Crawler → ETL Job → Redshift Ingestion**  
 📩 **SNS sends a success notification.**  
 
 ## ❌ **Failure Execution**  
 ![failed_execution](https://github.com/user-attachments/assets/e9e4bd4e-2d53-4a8e-81f4-501e92043c51)
+
 🚨 If an error occurs:  
 ❌ Step Function **routes execution to the failure path**.  
 📩 SNS **sends a failure notification** with details.  
